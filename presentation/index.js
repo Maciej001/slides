@@ -14,10 +14,10 @@ import {
   Slide,
   Text,
   Code,
-  CodePane,
-} from "spectacle"
+  CodePane
+} from "spectacle";
 
-import CodeSlide from 'spectacle-code-slide';
+import CodeSlide from "spectacle-code-slide";
 
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
@@ -29,7 +29,6 @@ import createTheme from "spectacle/lib/themes/default";
 require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
 
-
 // const images = {
 //   city: require("../assets/city.jpg"),
 //   kat: require("../assets/kat.png"),
@@ -39,15 +38,18 @@ require("spectacle/lib/themes/default/index.css");
 
 preloader(images);
 
-const theme = createTheme({
-  primary: "white",
-  secondary: "#00BDEB",
-  tertiary: "#eb7f00",
-  text: "#012832",
-  light: "#aaa"
-}, {
-  primary: "Muli"
-});
+const theme = createTheme(
+  {
+    primary: "white",
+    secondary: "#00BDEB",
+    tertiary: "#eb7f00",
+    text: "#012832",
+    light: "#aaa"
+  },
+  {
+    primary: "Muli"
+  }
+);
 
 const code = {
   arrowFunctions: require("!!raw-loader!../assets/codesnippets/ES6/ArrowFunctions.js"),
@@ -70,11 +72,11 @@ const code = {
   state: require("!!raw-loader!../assets/codesnippets/walk/state.js"),
   appWithState: require("!!raw-loader!../assets/codesnippets/walk/appWithState.js"),
   pictureWithFetch: require("!!raw-loader!../assets/codesnippets/walk/pictureWithFetch.js"),
-  fetching: require("!!raw-loader!../assets/codesnippets/walk/fetching.js"),
-}
+  fetching: require("!!raw-loader!../assets/codesnippets/walk/fetching.js")
+};
 
 const images = {
-  techknowDay: require("../assets/images/techknowday.png"),
+  techknowDay: require("../assets/images/techknowday.jpg"),
   reactWebsite: require("../assets/images/react-website.jpg"),
   reactWebsiteComponents: require("../assets/images/react-website-components.jpg"),
   reactWebsiteAppComponent: require("../assets/images/react-website-app-component.jpg"),
@@ -91,15 +93,17 @@ const images = {
   planApp: require("../assets/images/walk/planApp.jpg"),
   planPicture: require("../assets/images/walk/planPicture.jpg"),
   query: require("../assets/images/walk/query.jpg"),
-  youareawesome: require("../assets/images/walk/youareawesome.gif"),
-
-}
+  youareawesome: require("../assets/images/walk/youareawesome.gif")
+};
 
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
-
+      <Deck
+        transition={["zoom", "slide"]}
+        transitionDuration={500}
+        theme={theme}
+      >
         {/* Waiting / Starting slide */}
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={2} lineHeight={1.5} textColor="secondary">
@@ -117,15 +121,20 @@ export default class Presentation extends React.Component {
           <Image width="100%" src={images.trainers} />
         </Slide>
 
-
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={3} lineHeight={1.5} textColor="secondary">
             What we will do today:
           </Heading>
           <List>
-            <ListItem textColor='text' bold>Intro</ListItem>
-            <ListItem textColor='text' bold>ES6</ListItem>
-            <ListItem textColor='text' bold>NASA Picture of the day</ListItem>
+            <ListItem textColor="text" bold>
+              Intro
+            </ListItem>
+            <ListItem textColor="text" bold>
+              ES6
+            </ListItem>
+            <ListItem textColor="text" bold>
+              NASA Picture of the day
+            </ListItem>
           </List>
         </Slide>
 
@@ -138,9 +147,15 @@ export default class Presentation extends React.Component {
             State of Javascript 2016 survey
           </Heading>
           <List>
-            <ListItem textColor='text' bold>2011 - created by Jordan Walke</ListItem>
-            <ListItem textColor='text' bold>2013 - open source</ListItem>
-            <ListItem textColor='text' bold>2017 - MIT licence</ListItem>
+            <ListItem textColor="text" bold>
+              2011 - created by Jordan Walke
+            </ListItem>
+            <ListItem textColor="text" bold>
+              2013 - open source
+            </ListItem>
+            <ListItem textColor="text" bold>
+              2017 - MIT licence
+            </ListItem>
           </List>
         </Slide>
 
@@ -153,7 +168,7 @@ export default class Presentation extends React.Component {
             { loc: [0, 4], title: "Functions" },
             { loc: [0, 9], title: "Functions - New syntax" },
             { loc: [5, 12], title: "Skip curly braces" },
-            { loc: [10, 15], title: "One argument" },
+            { loc: [10, 15], title: "One argument" }
           ]}
         />
 
@@ -165,7 +180,7 @@ export default class Presentation extends React.Component {
           ranges={[
             { loc: [0, 10], title: "Destructuring" },
             { loc: [10, 19], title: "Destructuring - New syntax" },
-            { loc: [20, 23], title: "Shorter" },
+            { loc: [20, 23], title: "Shorter" }
           ]}
         />
 
@@ -176,7 +191,7 @@ export default class Presentation extends React.Component {
           code={code.stringInterpolation}
           ranges={[
             { loc: [0, 4], title: "String interpolation" },
-            { loc: [5, 8], title: "New syntax" },
+            { loc: [5, 8], title: "New syntax" }
           ]}
         />
 
@@ -187,7 +202,7 @@ export default class Presentation extends React.Component {
           code={code.classes}
           ranges={[
             { loc: [0, 10], title: "Classes" },
-            { loc: [11, 22], title: "Extending the class" },
+            { loc: [11, 22], title: "Extending the class" }
           ]}
         />
 
@@ -222,7 +237,7 @@ export default class Presentation extends React.Component {
           code={code.appWithChildren}
           ranges={[
             { loc: [0, 14], title: "App has 👩‍👧‍👦" },
-            { loc: [0, 14], title: "App has 👩‍👧‍👦" },
+            { loc: [0, 14], title: "App has 👩‍👧‍👦" }
           ]}
         />
 
@@ -233,7 +248,7 @@ export default class Presentation extends React.Component {
           code={code.tags}
           ranges={[
             { loc: [0, 5], title: "HTML tags" },
-            { loc: [6, 11], title: "React components" },
+            { loc: [6, 11], title: "React components" }
           ]}
         />
 
@@ -244,7 +259,7 @@ export default class Presentation extends React.Component {
           code={code.basicComponent}
           ranges={[
             { loc: [0, 8], title: "JSX and children" },
-            { loc: [0, 8], title: "JSX and children" },
+            { loc: [0, 8], title: "JSX and children" }
           ]}
         />
 
@@ -278,11 +293,21 @@ export default class Presentation extends React.Component {
             Coding time!
           </Heading>
           <List>
-            <ListItem textColor='text' bold>codesandbox.io</ListItem>
-            <ListItem textColor='text' bold>REACT EDITOR</ListItem>
-            <ListItem textColor='text' bold>Sign in with Github</ListItem>
-            <ListItem textColor='text' bold>Delete Hello.js</ListItem>
-            <ListItem textColor='text' bold>Change index.js</ListItem>
+            <ListItem textColor="text" bold>
+              codesandbox.io
+            </ListItem>
+            <ListItem textColor="text" bold>
+              REACT EDITOR
+            </ListItem>
+            <ListItem textColor="text" bold>
+              Sign in with Github
+            </ListItem>
+            <ListItem textColor="text" bold>
+              Delete Hello.js
+            </ListItem>
+            <ListItem textColor="text" bold>
+              Change index.js
+            </ListItem>
           </List>
         </Slide>
 
@@ -293,7 +318,7 @@ export default class Presentation extends React.Component {
           code={code.basicSandbox}
           ranges={[
             { loc: [0, 8], title: "index.js" },
-            { loc: [0, 8], title: "index.js" },
+            { loc: [0, 8], title: "index.js" }
           ]}
         />
 
@@ -312,7 +337,7 @@ export default class Presentation extends React.Component {
           code={code.functionalApp}
           ranges={[
             { loc: [0, 7], title: "App.js" },
-            { loc: [8, 14], title: "index.js" },
+            { loc: [8, 14], title: "index.js" }
           ]}
         />
 
@@ -331,7 +356,7 @@ export default class Presentation extends React.Component {
           code={code.twoTypesOfComponents}
           ranges={[
             { loc: [0, 3], title: "Functional components" },
-            { loc: [4, 16], title: "Class components" },
+            { loc: [4, 16], title: "Class components" }
           ]}
         />
 
@@ -344,7 +369,7 @@ export default class Presentation extends React.Component {
             { loc: [0, 14], title: "Add navigation" },
             { loc: [15, 24], title: "Add navigation" },
             { loc: [25, 34], title: "Button component with props" },
-            { loc: [35, 44], title: "destructured props" },
+            { loc: [35, 44], title: "destructured props" }
           ]}
         />
 
@@ -363,7 +388,7 @@ export default class Presentation extends React.Component {
           code={code.addCSS}
           ranges={[
             { loc: [0, 2], title: "Create App.css" },
-            { loc: [3, 15], title: "Add App.css" },
+            { loc: [3, 15], title: "Add App.css" }
           ]}
         />
 
@@ -374,7 +399,7 @@ export default class Presentation extends React.Component {
           code={code.addPicture}
           ranges={[
             { loc: [0, 14], title: "Add Picture component" },
-            { loc: [15, 25], title: "Create Picture component" },
+            { loc: [15, 25], title: "Create Picture component" }
           ]}
         />
 
@@ -386,7 +411,7 @@ export default class Presentation extends React.Component {
           ranges={[
             { loc: [0, 7], title: "Copy data content into data.js" },
             { loc: [8, 10], title: "import data.js into Picture.js" },
-            { loc: [11, 24], title: "import data.js into Picture.js" },
+            { loc: [11, 24], title: "import data.js into Picture.js" }
           ]}
         />
 
@@ -395,9 +420,15 @@ export default class Presentation extends React.Component {
             Get your API key from NASA
           </Heading>
           <List>
-            <ListItem textColor='text' bold>api.nasa.gov</ListItem>
-            <ListItem textColor='text' bold>Apply for an api key</ListItem>
-            <ListItem textColor='text' bold>Save your key in Picture.js</ListItem>
+            <ListItem textColor="text" bold>
+              api.nasa.gov
+            </ListItem>
+            <ListItem textColor="text" bold>
+              Apply for an api key
+            </ListItem>
+            <ListItem textColor="text" bold>
+              Save your key in Picture.js
+            </ListItem>
           </List>
         </Slide>
 
@@ -408,7 +439,7 @@ export default class Presentation extends React.Component {
           code={code.nasaAPI}
           ranges={[
             { loc: [0, 8], title: "Store your API key in Picture.js" },
-            { loc: [0, 8], title: "Store your API key in Picture.js" },
+            { loc: [0, 8], title: "Store your API key in Picture.js" }
           ]}
         />
 
@@ -418,10 +449,18 @@ export default class Presentation extends React.Component {
             State
           </Heading>
           <List>
-            <ListItem textColor='text' bold>Local component's storage</ListItem>
-            <ListItem textColor='text' bold>Only in class components</ListItem>
-            <ListItem textColor='text' bold>Initialised in constructor </ListItem>
-            <ListItem textColor='text' bold>this.setState(...) to mutate state</ListItem>
+            <ListItem textColor="text" bold>
+              Local component's storage
+            </ListItem>
+            <ListItem textColor="text" bold>
+              Only in class components
+            </ListItem>
+            <ListItem textColor="text" bold>
+              Initialised in constructor{" "}
+            </ListItem>
+            <ListItem textColor="text" bold>
+              this.setState(...) to mutate state
+            </ListItem>
           </List>
         </Slide>
 
@@ -432,7 +471,7 @@ export default class Presentation extends React.Component {
           code={code.state}
           ranges={[
             { loc: [0, 12], title: "Initialise state in constructor" },
-            { loc: [13, 25], title: "ES2015+ way" },
+            { loc: [13, 25], title: "ES2015+ way" }
           ]}
         />
 
@@ -490,7 +529,7 @@ export default class Presentation extends React.Component {
             { loc: [54, 63], title: "Create a dateChangeDirection object" },
             { loc: [64, 80], title: "Add onDateChange() function" },
             { loc: [81, 93], title: "Implement onDateChange() function" },
-            { loc: [94, 108], title: "Display date from state" },
+            { loc: [94, 108], title: "Display date from state" }
           ]}
         />
 
@@ -501,7 +540,7 @@ export default class Presentation extends React.Component {
           code={code.pictureWithFetch}
           ranges={[
             { loc: [0, 9], title: "Pass date to Picture" },
-            { loc: [10, 19], title: "Create Picture's state" },
+            { loc: [10, 19], title: "Create Picture's state" }
           ]}
         />
 
@@ -521,7 +560,7 @@ export default class Presentation extends React.Component {
             { loc: [0, 13], title: "Create query" },
             { loc: [14, 26], title: "Fetch data and store in state" },
             { loc: [27, 42], title: "Add lifecycle functions" },
-            { loc: [43, 50], title: "Replace where the data comes from" },
+            { loc: [43, 50], title: "Replace where the data comes from" }
           ]}
         />
 
@@ -532,8 +571,6 @@ export default class Presentation extends React.Component {
           </Heading>
           <Image width="40%" src={images.youareawesome} />
         </Slide>
-
-
       </Deck>
     );
   }

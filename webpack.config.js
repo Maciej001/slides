@@ -31,7 +31,7 @@ module.exports = {
         plugins: [
           [
             "react-transform", {
-              transforms: [{
+              transforms: [{webpack.config.js
                 transform: "react-transform-hmr",
                 imports: ["react"],
                 locals: ["module"]
